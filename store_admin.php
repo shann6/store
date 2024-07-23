@@ -23,6 +23,7 @@ if($totalRows){
     exit;
   }
 
+  
  $sql=sprintf("  SELECT 
 storetable1.s_id,
 storetable1.s_name,
@@ -86,8 +87,8 @@ $rows = $pdo->query($sql)->fetchAll();
         <td><?= $r['s_name'] ?></td>
         <td><img style="width: 180px;" src="pic/<?= $r['s_pic'] ?>" alt=""></td>
         <td><?= $r['s_address'] ?></td>
-        <td><?= $r['open_time'] ?></td>
-        <td><?= $r['close_time'] ?></td>
+        <td><?= substr($r['open_time'], 0, 5) ?></td>
+        <td><?= substr($r['close_time'], 0, 5 ) ?></td>
         <td><?= $r['s_phone'] ?></td>
         <td><?= $r['s_city'] ?></td>
         <td><?= $r['s_area'] ?></td>
